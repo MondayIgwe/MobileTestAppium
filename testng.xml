@@ -5,7 +5,7 @@
         <classes>
             <class name="org.AccessabilityTest">
                 <methods>
-                    <exclude name="RunTest"/>
+                    <include name="RunTest"/>
                 </methods>
             </class>
             <class name="org.LoginTest">
@@ -15,7 +15,7 @@
             </class>
             <class name="org.TheInternetTest">
                 <methods>
-                    <include name="internetTest"/>
+                    <exclude name="internetTest"/>
                 </methods>
             </class>
         </classes>

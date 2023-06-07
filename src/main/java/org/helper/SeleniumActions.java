@@ -56,7 +56,7 @@ public class SeleniumActions {
     public WebElement explicitWait(By by) {
         try {
             WebElement element = findOne(by);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(600));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
             return wait.until(ExpectedConditions.visibilityOf(element));
         } catch (WebDriverException driverException) {
             System.out.println(driverException.getMessage());

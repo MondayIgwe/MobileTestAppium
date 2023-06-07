@@ -9,9 +9,8 @@ public interface CommonConst {
     public static final String NODEJSPATH = "C:\\Program Files\\nodejs\\node.exe";
     public static final String MAINJSFILE = "C:\\Users\\migwe\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
     public static final String APKFILEPATH = "src\\main\\java\\resources\\apk\\";
-//    public static final String PROCESSNAME = "qemu-system-x86_64.exe";
-//    public static final String CHROMDRIVERPROCESSNAME = "chromedriver.exe";
-//    public static final String NODEPROCESSNAME = "node.exe";
+    public static final int waitTime = 2000;
+
     public static final String LOGS = "appiumServerlogs/logs.txt";
 
     static void sleep(int waitTime){

@@ -1,5 +1,6 @@
 package org;
 
+import baseTest.LifeCycle;
 import org.page.interaction.TheInternetHerokuAppProcess;
 import org.testng.annotations.Test;
 
@@ -12,9 +13,9 @@ public class TheInternetTest extends LifeCycle {
     @Test
     public void internetTest() {
         try {
-            theInternetHerokuAppProcess = new TheInternetHerokuAppProcess(androidDriver_);
+            theInternetHerokuAppProcess = new TheInternetHerokuAppProcess(androidDriver);
             assertNotNull(theInternetHerokuAppProcess);
-            assertNotNull(androidDriver_);
+            assertNotNull(androidDriver);
 
             theInternetHerokuAppProcess.chooselink("A/B Testing");
         } catch (InterruptedException e) {

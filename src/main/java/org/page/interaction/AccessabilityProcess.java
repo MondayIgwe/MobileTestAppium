@@ -3,6 +3,8 @@ package org.page.interaction;
 import io.appium.java_client.AppiumDriver;
 import org.helper.SeleniumActions;
 import static org.page.locator.AccessabilityElements.*;
+import static org.utils.CommonConst.sleep;
+import static org.utils.CommonConst.waitTime;
 
 public class AccessabilityProcess {
     /*
@@ -14,6 +16,7 @@ public class AccessabilityProcess {
 
     public AccessabilityProcess(AppiumDriver appiumDriver) {
         seleniumActions = new SeleniumActions(appiumDriver);
+        sleep(2000);
         seleniumActions.clickElement(accessibilityTab);
     }
 
