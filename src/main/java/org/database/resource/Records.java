@@ -6,9 +6,7 @@ import org.database.Entity.ClassicModelEntity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.database.IDBQueries.*;
 import static org.database.IDBQueries.Location;
@@ -21,7 +19,6 @@ public class Records {
         for (int i = 0; i <= listOfRecord.size(); ) {
 
             while (resultSet.next()) {
-                classicModelEntity = new ClassicModelEntity();
                 classicModelEntity.setBookName(resultSet.getString(BookName));
                 classicModelEntity.setPurcharsedDate(resultSet.getString(PurcharsedDate));
                 classicModelEntity.setAmount(resultSet.getInt(Amount));
@@ -34,6 +31,10 @@ public class Records {
 
                 // Create Single json object record
                 ConvertoJson.convertSingleJavaToJsonProcess(classicModelEntity, entityRecord);
+
+                // Output json object
+                ConvertoJson.convertSingleJavaToJsonProcessString(listOfRecord);
+
                 System.out.printf("bookName: %s, purchasedDate: %s, amount: %d, location: %s, \n", classicModelEntity.getBookName(), classicModelEntity.getPurcharsedDate(), classicModelEntity.getAmount(), classicModelEntity.getLocation());
 
             }

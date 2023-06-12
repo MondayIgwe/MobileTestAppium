@@ -16,12 +16,6 @@ public class CapabilityFactory {
         try{
             JSONParser jsonParser = new JSONParser();
           return (JSONArray) jsonParser.parse(new FileReader(jsonCapabilities));
-
-//            HashMap<String, Object> hashMapOptions = new HashMap<>();
-//            hashMapOptions.put("autoLaunch", true);
-//            hashMapOptions.put("autoGrantPermissions", true);
-//            hashMapOptions.put("noReset", false);
-
         }catch (Exception e){
 
         }
@@ -33,6 +27,7 @@ public class CapabilityFactory {
     private static JSONObject getCapabilitiesConfig(String capabilityName, String jsonLocation) {
         try {
             JSONArray jsonCapabilities = parseJson(jsonLocation);
+
             for(Object jsonObj : jsonCapabilities){
                 JSONObject capability =  (JSONObject)jsonObj;
                 if(capability.get("name").toString().equalsIgnoreCase(capabilityName))

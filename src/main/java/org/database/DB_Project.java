@@ -17,7 +17,7 @@ import static org.database.IDBQueries.*;
  */
 public class DB_Project {
 
-    static ClassicModelEntity classicModelEntity;
+    ClassicModelEntity classicModelEntity;
 
     Connection connection;
 
@@ -27,6 +27,8 @@ public class DB_Project {
             System.out.println("====== DB Connection established =========");
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
+        }finally {
+            classicModelEntity = new ClassicModelEntity();
         }
 
     }

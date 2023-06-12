@@ -21,7 +21,7 @@ public class LifeCycle {
 
     public static AppiumDriver createAndroidDriver(Apps[] apps) throws IOException {
 
-        sleep(waitTime);
+        sleep(WAITTIME);
 
         startServer(); // Start Appium Server
 

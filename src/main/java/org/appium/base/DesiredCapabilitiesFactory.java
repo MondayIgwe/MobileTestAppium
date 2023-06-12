@@ -12,11 +12,11 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import static org.appium.utils.CommonConst.*;
+
 public class DesiredCapabilitiesFactory {
 
     private static AppiumDriver androidDriver;
-    private static ThreadLocal<AppiumDriver> threadLocal;
-
     public static AppiumDriver setDesiredCapabilities(String app) throws IOException {
         DesiredCapabilities caps = CapabilityFactory.getDesiredCapabilities(app, "./src/main/resources/Capabilities.json");
 
@@ -89,12 +89,11 @@ public class DesiredCapabilitiesFactory {
 //                System.out.println("Invalid Platform");
 //        }
 //
-        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "30000");
+        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, String.valueOf(WAITTIME));
 
-        checkBrokenLink("http://localhost:4723/wd/hub");
+        checkBrokenLink(APPIUMSERVER);
 
-        //threadLocal.set(new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps));
-        androidDriver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
+        androidDriver = new AndroidDriver(new URL(APPIUMSERVER), caps);
 
         return androidDriver;
     }

@@ -34,7 +34,7 @@ public class AppiumServer {
             stopServer();
         } else {
             service.start();
-            sleep(waitTime);
+            sleep(WAITTIME);
             System.out.println("APPIUM SERVER SUCCESSFULLY STARTED");
         }
 
@@ -42,10 +42,10 @@ public class AppiumServer {
 
     public static void stopServer() {
         service.stop();
-        sleep(waitTime);
+        sleep(WAITTIME);
         service.close();
         System.out.println("APPIUM SERVER SUCCESSFULLY STOPPED");
-        sleep(waitTime);
+        sleep(WAITTIME);
     }
 
 }
