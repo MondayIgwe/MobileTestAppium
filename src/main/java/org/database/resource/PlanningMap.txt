@@ -1,0 +1,4 @@
+===== Problem Statement============
+Get data from a database (mysql)
+Get the result and store in a POJO java object
+Convert to jsonobject and send as a request to API services

@@ -3,17 +3,17 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/migwe/IdeaProjects/MobileTestAppium">
         <classes>
-            <class name="org.AccessabilityTest">
+            <class name="org.appium.AccessabilityTest">
                 <methods>
                     <include name="RunTest"/>
                 </methods>
             </class>
-            <class name="org.LoginTest">
+            <class name="org.appium.LoginTest">
                 <methods>
                     <include name="verifyLogin"/>
                 </methods>
             </class>
-            <class name="org.TheInternetTest">
+            <class name="org.appium.TheInternetTest">
                 <methods>
                     <exclude name="internetTest"/>
                 </methods>
