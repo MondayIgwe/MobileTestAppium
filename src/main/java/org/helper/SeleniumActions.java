@@ -11,10 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 public class SeleniumActions {
 
-    AppiumDriver driver;
+    static AppiumDriver driver;
 
     public SeleniumActions(AppiumDriver driver_) {
         driver = driver_;
@@ -29,6 +30,10 @@ public class SeleniumActions {
     public void sendKeyz(By element, String text) {
         WebElement ele = findOne(element);
         ele.sendKeys(text);
+    }
+    public void clearField(By element) {
+        WebElement ele = findOne(element);
+        ele.clear();
     }
 
     public WebElement findAllPickOne(By by, WebElement elementToSearchForIntheCollection) {
@@ -114,5 +119,15 @@ public class SeleniumActions {
     public void waitForLoad() {
         new WebDriverWait(driver, Duration.ofSeconds(300)).until((ExpectedCondition<Boolean>) wd ->
                 ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
+    }
+
+    public void switchToWebView(){
+        Set<String> contexts = driver.getWindowHandles();
+        for(String context : contexts){
+            if(context.contains("WEBVIEW"))
+                driver.switchTo().window(context);
+            else
+                driver.switchTo().window("NATIVE_APP");
+        }
     }
 }

@@ -10,7 +10,7 @@
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.support.ui.ExpectedConditions;
 //import org.openqa.selenium.support.ui.WebDriverWait;
-//import org.page.locator.App;
+//import org.page.locator.selendroidLocators.Selendroid_test_app;
 //
 //import java.time.Duration;
 //

@@ -3,32 +3,39 @@ package org;
 import baseTest.LifeCycle;
 import org.enumConstant.Apps;
 import org.page.interaction.AccessabilityProcess;
-import org.testng.annotations.*;
+import org.page.interaction.selendroid.Selendroid_test_app_process;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+
 import static org.services.AppiumServer.stopServer;
 import static org.testng.Assert.assertNotNull;
 import static org.utils.CommonConst.sleep;
 import static org.utils.EmulatorProcess.*;
-import static org.utils.EmulatorProcess.processes;
 
-public class AccessabilityTest extends LifeCycle {
-    static AccessabilityProcess accessability;
+public class SelendroidTest extends LifeCycle {
+    //static Selendroid_test_app_process selendroid_test_app_process;
+
     @BeforeMethod
     public void setUp() {
         try {
-            Apps[] apps = {Apps.APIDEMOAPP};
+            Apps[] apps = {Apps.SELENDROIDAPP};
             androidDriver = createAndroidDriver(apps);
             assertNotNull(androidDriver);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
+
     @Test
-    public void RunTest() {
-        accessability = new AccessabilityProcess(androidDriver);
-        assertNotNull(accessability);
-        accessability.customView();
+    public void RunSelendroidTest() {
+        Selendroid_test_app_process selendroid_test_app_process = new Selendroid_test_app_process(androidDriver);
+        assertNotNull(selendroid_test_app_process);
+        selendroid_test_app_process.selendroidProcess();
+        System.out.println("Selendroid Test");
+
 
     }
 

@@ -19,7 +19,7 @@ public class LoginTest extends LifeCycle {
     @BeforeMethod
     public void setUp() {
         try {
-            Apps[] apps = {Apps.ANDROIDWEB};
+            Apps[] apps = {Apps.THEINTERNETWEBAPP};
             androidDriver = createAndroidDriver(apps);
             assertNotNull(androidDriver);
         } catch (Exception e) {

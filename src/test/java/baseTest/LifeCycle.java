@@ -34,12 +34,18 @@ public class LifeCycle {
             Apps appType = apps[i];
             String app = appType.toString().toLowerCase();
 
-            if (app.equals("androidweb")) {
+            if (app.equals(THEINTERNETWEBAPP)) {
                 System.out.println("======= EXECUTING ON: " + REALDEVICE + "===============");
                 androidDriver = setDesiredCapabilities(app);
-                web = new Web(androidDriver, INTERNETHEROKUAPP + "login");
+
+                if (app.contains("login")) {
+                    web = new Web(androidDriver, INTERNETHEROKUAPP + "login");
+                } else {
+                    web = new Web(androidDriver, INTERNETHEROKUAPP);
+                }
+
                 return androidDriver;
-            } else if (app.equals("androidhybrid")) {
+            } else if (app.equals(APIDEMOAPP) || app.equals(SELENDROIDAPP)) {
                 // StartEmulator(); // Start emulator or simulator
                 androidDriver = setDesiredCapabilities(app);
                 return androidDriver;

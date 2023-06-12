@@ -1,0 +1,48 @@
+[
+  {
+    "name": "nativeapp",
+    "caps": {
+      "platformName": "Android",
+      "deviceName": "Huawei P30",
+      "automationName": "UiAutomator2",
+      "appPackage": "com.android.calculator2",
+      "appActivity": ".Calculator"
+
+    }
+  },
+  {
+    "name": "selendroidapp",
+    "caps": {
+      "platformName": "Android",
+      "deviceName": "Huawei P30",
+      "automationName": "UiAutomator2",
+      "autoGrantPermissions": "true",
+      "app": "apkLib/selendroid-test-app-0.17.0.apk"
+    }
+  },
+  {
+    "name": "apiDemoapp",
+    "caps": {
+      "platformName": "Android",
+      "deviceName": "Huawei P30",
+      "automationName": "UiAutomator2",
+      "appPackage": "io.appium.android.apis",
+      "appActivity": "io.appium.android.apis.ApiDemos",
+      "avdReadyTimeout": "100000",
+      "avdLaunchTimeout": "230000",
+      "appWaitPackage": "io.appium.android.apis",
+      "appWaitActivity": "io.appium.android.apis.ApiDemos",
+      "app": "apkLib/ApiDemos-debug.apk"
+    }
+  },
+  {
+    "name": "theinternetwebapp",
+    "caps": {
+      "platformName": "Android",
+      "deviceName": "Huawei P30",
+      "automationName": "UiAutomator2",
+      "browserName": "Chrome",
+      "chromedriverExecutable": "C:\\ChromeDriverExecutatble\\chromedriver.exe"
+    }
+  }
+]
